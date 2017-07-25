@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: test-client
+spec:
+  template:
+    metadata:
+      labels:
+        tier: test-client
+    spec:
+      containers:
+      - name: test-client
+        # image: my-website
+        imagePullPolicy: Always
+        image: gcr.io/my-website-169905/test-client:latest
+        ports:
+        - containerPort: 80
