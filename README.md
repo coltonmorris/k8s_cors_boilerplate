@@ -9,3 +9,12 @@ Have a headless chrome connect to a server running our webappthen have that head
 For the client, have a webpage, maybe it needs to be served from an http server.
 
 For the server, have an http server waiting as well, when the endpoint /preflight or the endpoint /no-preflight is requested send back a json object (stringified for no preflight)
+
+
+### TODO
+---
+- Check that backend middleware is working
+- Frontend serve a file with 2 buttons that hit backend
+- Fix virtualbox like always
+- Create Ingress for frontend
+- Chrome debug protocol to click 2 buttons and recieve correct responses

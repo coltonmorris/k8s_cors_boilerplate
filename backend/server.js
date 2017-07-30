@@ -12,6 +12,7 @@ let server = restify.createServer({
   name: 'cors-backend',
 })
 
+//TODO pretty sure these are not doing anything. Check that
 server.use(restifyPlugins.bodyParser({mapParams: false}))
 server.use(restifyPlugins.queryParser({mapParams: false}))
 
