@@ -1,0 +1,21 @@
+version: "3"
+services:
+  backend:
+    image: cors-backend
+
+  frontend:
+    image: cors-frontend
+    links:
+      - backend
+    environment:
+      BACKEND_HOST: "backend"
+
+  test:
+    image: cors-tester
+    environment:
+      FRONTEND_HOST: "frontend"
+    links:
+      - frontend
+    volumes:
+      - .:/app
+    command: "npm test"

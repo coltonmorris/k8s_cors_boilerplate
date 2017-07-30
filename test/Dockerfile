@@ -6,10 +6,9 @@ WORKDIR /app
 
 # Install dependencies
 COPY ./package.json /app
-COPY ./server.js /app
-COPY ./Makefile /app
-
-# RUN npm i
+COPY ./cdp.js /app
+COPY ./config /app/config
 COPY ./node_modules /app/node_modules
 
-CMD [ "node", "server.js" ]
+
+CMD [ "node", "cdp.js" ]

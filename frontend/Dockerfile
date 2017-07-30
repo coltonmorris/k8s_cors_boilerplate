@@ -6,10 +6,10 @@ WORKDIR /app
 
 # Install dependencies
 COPY ./package.json /app
-COPY ./client.js /app
-COPY ./Makefile /app
+COPY ./app.js /app
 
-# RUN npm i
 COPY ./node_modules /app/node_modules
+COPY ./tests /app/tests
+COPY ./config /app/config
 
-CMD [ "node", "client.js" ]
+CMD [ "node", "app.js" ]

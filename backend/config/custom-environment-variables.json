@@ -1,0 +1,6 @@
+{
+  "backend": {
+    "host": "BACKEND_HOST",
+    "port": "BACKEND_PORT"
+  }
+}

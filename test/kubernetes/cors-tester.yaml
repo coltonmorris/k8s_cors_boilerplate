@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cors-tester
+spec:
+  template:
+    metadata:
+      labels:
+        tier: cors-tester
+    spec:
+      containers:
+      - name: cors-tester
+        imagePullPolicy: Always
+        image: gcr.io/my-website-169905/cors-tester:latest
+        ports:
+        - containerPort: 80

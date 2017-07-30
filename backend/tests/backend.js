@@ -5,7 +5,8 @@ let chai = require('chai')
 let rp = require('request-promise')
 let _ = require('lodash')
 let expect = chai.expect
-
+let config = require('config')
+let host = 'http://' + config.get('backend.host') + ':' + config.get('backend.port')
 
 describe('Backend Server', function() {
   describe('/preflight', function() {
@@ -13,7 +14,7 @@ describe('Backend Server', function() {
     let body
     beforeEach(function() {
       options = {
-        uri: 'http://localhost:8080/preflight',
+        uri: host + '/preflight',
         method: 'POST',
         json: true,
         headers: {
@@ -60,7 +61,7 @@ describe('Backend Server', function() {
     let message
     beforeEach(function() {
       options = {
-        uri: 'http://0.0.0.0:8080/no-preflight',
+        uri: host + '/no-preflight',
         method: 'POST',
         headers: {
           'content-type': 'text/plain'

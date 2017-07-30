@@ -4,6 +4,9 @@ let restify = require('restify')
 let restifyPlugins = require('restify-plugins')
 let errors = require('restify-errors')
 let _ = require('lodash')
+let config = require('config')
+let host = config.get('backend.host')
+let port = config.get('backend.port')
 
 let server = restify.createServer({
   name: 'cors-backend',
@@ -42,6 +45,6 @@ server.post('/no-preflight', (req, res, next) => {
   return next()
 })
 
-server.listen(80, "0.0.0.0", () => {
+server.listen(port, host, () => {
   console.log('%s listening at %s', server.name, server.url)
 })

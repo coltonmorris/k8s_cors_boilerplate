@@ -1,0 +1,6 @@
+{
+  "frontend": {
+    "host": "frontend",
+    "port": "80"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "frontend": {
+    "host": "FRONTEND_HOST",
+    "port": "FRONTEND_PORT"
+  }
+}
